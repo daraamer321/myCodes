@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta http-equiv = "refresh" content = "5">
+	<style>
+		div{position:absolute}
+		</style>
+</head>
+<body id = "bodyId" onload = "show_pattern()">
+
+
+<script>
+
+function show_pattern(){
+	var top_pos = 25, left_pos = 25, width = 300, height = 300;
+	var colours = ["red","blue","cyan","orange","green","gold","magenta","yellow"];
+	var the_body = document.getElementById("bodyId");
+	
+	while(width > 50){
+		var the_div = document.createElement("div")
+		var index = Math.floor(Math.random()*8);
+		var col = colours[index];
+		the_div.style.left = left_pos + "px";
+		the_div.style.top = top_pos + "px";
+		the_div.style.width = width + "px";
+		the_div.style.height = height + "px";
+		the_div.style.background = col;
+		
+		
+		
+		the_body.appendChild(the_div)
+		
+		top_pos += 10;
+		left_pos += 10;
+		width -= 20;
+		height -= 20;
+	}
+}
+</script>
+</body>
+</html>
